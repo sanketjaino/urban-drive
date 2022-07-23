@@ -1,0 +1,560 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+a{
+    text-decoration: none;
+}
+.top-body{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    background-image: linear-gradient(rgb(0, 0, 0) ,#ffffff00 30%), url(./src/images/scooter.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.main-body{
+    width: 100%;
+    overflow: hidden;
+}
+.arrow{
+    width: 15px;
+    height: 15px;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    position: relative;
+    transform: rotate(45deg);
+}
+.arrow2{
+    top: -7.5px;
+}
+@keyframes move-up-down{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100%{
+        transform: translate(0px ,40px);
+        opacity: 0;
+    }
+}
+.arrows{
+    animation: move-up-down 1.5s ease-out 0s infinite forwards;
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    transform: translateX(-50%);
+    padding: 20px;
+    
+}
+.top-text{
+    color: white;
+    text-align: center;
+    padding-top: 47vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 2em;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+    /* background-color: transparent; */
+    box-shadow: 0px 5px 7px 5px rgba(0, 0, 0, 0);
+    /* transition: all 0.25s ease-in-out; */
+    /* background-image:  linear-gradient(45deg,rgba(0, 0, 0, 0.849) 50%,#acacacdc 50%); */
+    /* backdrop-filter: blur(5px); */
+}
+
+.navicon{
+    position: fixed;
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    z-index: 10;
+    /* transition: all 0.25s linear; */
+    transform: translateY(-150%);
+    /* background-image: linear-gradient(to right,rgba(0, 0, 0, 0.493),rgba(51, 51, 51, 0.479)); */
+    transition: all 0.1s linear;
+}
+.navicon img{
+    width: 30px;
+}
+.navicon a{
+    color: white;
+    font-size: 1.25em;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    list-style: none;
+}
+.navbar a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em; 
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    margin: 10px 3vw;
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .navbar a:active{
+    color: rgb(138, 138, 138);
+}
+  .navbar a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  .navbar a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  .navbtn{
+      position: absolute;
+      right: 0;
+      margin: 15px;
+      visibility: hidden;
+ }
+  .line{
+      display: block;
+      width: 30px;
+      border-bottom: 4px solid white;  
+      transition: transform 0.6s;
+      margin: 0px;
+      margin: 6px;
+  }
+  .lines{
+      display: none;
+      position: absolute;
+      padding: 2.5px;
+      cursor: pointer;
+      right: 1px;
+      top: 15px;
+  }
+  .line2{
+      transition: all 0s ;
+  }
+  .nav-title{
+      display: none;
+      color: white;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      position: absolute;
+      left: 50vw;
+      transform: translateX(-50%);
+      padding: 17.5px;
+      font-size: 1.7em;
+      transition: 0.5 ease-in-out;
+  }
+@media (max-width:1100px)
+{   
+    #navicon-text{
+        display: none;
+    }
+    .lines{
+        display: block;
+    }
+    .top-text{
+        font-size: 1.25em;
+    }
+    .navbar ul{
+        transform: translateX(-100vw);
+        transition: 0.5s ease-in-out;
+        background-color: #00d8b4;
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar{
+        height: 70px;
+    }
+    .navbtn:checked ~ .nav-items{
+        transform: translateY(0vh);
+        transform: translateY(70px);
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbtn:checked +.lines .line1{
+        transform-origin: 0% 0%;
+        transform: rotate(398deg);
+        width: 32.5px;
+    }
+    .navbtn:checked +.lines .line3{
+        transform-origin: 0% 0%;
+        transform: rotate(-38deg);
+        width: 32.5px;
+    }
+    .navbtn:checked +.lines .line2{
+        visibility: hidden;
+        width: 32.5px;
+    }
+
+}
+
+/* ---------------CSS for main body------------------ */
+
+
+.empty{
+    height: 7.5em;
+}
+
+
+.heading{
+    font-size: 1em;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+.heading h3{
+    color: gray;
+}
+.heading span{
+    transform: translateY(-0.25em);
+    display: inline-block;
+    border: 1px solid gray;
+    height: 2px;
+    width: 20px;
+    align-self: center;
+}
+.card-rotated{
+    background-image: linear-gradient(135deg ,black ,rgb(138, 136, 136));
+    transform: rotate(45deg) ;
+    width: 175px;
+    height: 175px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-rotated div{
+    transform: rotate(-45deg);
+    font-size: 1.5em;
+    color: white;
+    border-bottom: 2px solid white;
+    text-align: center;
+    font-weight: 700;
+    display: inline-block;
+    width: 100%;
+    
+}
+.box-of-cards{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+}
+.cards{
+    width: 33%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+/* .provide{
+    overflow: hidden;
+} */
+.card{
+    height: 25vh;
+    width: 25vh;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+    margin: 5px;
+    font-weight: 700;
+    color: white;
+    font-size: 1.25em;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.144);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.quality{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.479)),url(./src/images/quality.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.price{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.479)),url(./src/images/prices.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.eco{
+        background-image: linear-gradient(to right,rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.479)),url(./src/images/eco.png) ;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+}
+.customer{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.479)),url(./src/images/customer.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media (max-width:700px) {
+    .box-of-cards{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cards{
+        width: 100%;
+        padding: 5px;
+    }
+    .box-of-cards{
+        margin-top: 5px;
+    }
+    .card{
+        height: 30vh;
+        width: 30vh;
+        margin-bottom: 15px;
+    }
+    
+}
+@media (max-width:450px){
+    .card{
+        height: 20vh;
+        width: 20vh;
+        font-size: 1.0em;
+    }
+}
+/* -------Counter css ------*/
+.counters{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.counter{
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.material-icons{
+    color: #1ABC9C;;
+}
+.material-icons.md-36 { font-size: 36px; }
+
+.counter p{
+    color: rgba(128, 128, 128, 0.897);
+}
+.counter__value{
+    font-size: 2rem;
+    font-weight: 700;
+}
+@media (max-width:600px){
+    .counters{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/*----------------------- CARDS CSS------------------- */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+.cards2{
+    font-size: 1rem;
+    border: 1px rgb(157, 253, 173) solid;
+    box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.034);
+    flex-basis: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    margin:10px;
+    color: rgb(58, 58, 58);
+    margin-bottom: 50px;
+    padding: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease-in-out ;
+    max-width: 500px;
+    background-image: linear-gradient(-45deg,rgba(255, 255, 255, 0.082) 50%,#1abc9c09 50%);
+}
+.cards2:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.082);;
+}
+.card-title{
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    border-bottom: 5px #1ABC9C solid;
+    color: green;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+}
+.card-text{
+    padding: 10px 25px;
+}
+
+#card-section{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    transition: box-shadow 0.25s ease-in-out ;
+    
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .cards2{
+        flex-basis: 80%;
+        padding: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .card-text{
+        padding: 10px 0px;
+    }
+}
+
+
+/* -----Aim css------ */
+.aim{
+    padding: 20px;
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15vh;
+    justify-content: space-evenly;
+}
+.aim-box{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    color: green;
+}
+.aim-box img{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    display: block;
+}
+.aim-box1 , .aim-box2{
+    padding: 10px;
+    width: 125px;
+    height: 125px;
+    text-align: center;
+}
+/*----- footer css-------- */
+footer{
+    /* background-color: #000000; */
+    background-image: linear-gradient(45deg,#00d3b0 50%,#00d8b4 50%);
+    color: white;
+    padding: 45px;
+}
+.footer-title{
+    text-align: center;
+    padding: 5px 0px;
+}
+.footer-title h1{
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+.footer-lower{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.navigation ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.navigation>ul>a>li{
+    padding: 5px;
+    color: white;
+}
+.navigation>ul>a>li:hover{
+    color: rgb(88, 255, 199);
+}
+.address{
+    padding: 50px;
+    max-width: 350px;
+    letter-spacing: 2px;
+}
+.rotated-rect{
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    margin: 0px 10px;
+    box-shadow: 4px 4px 1px 3px rgba(255, 255, 255, 0.164);
+    display: inline-block;
+    text-align: center;
+}
+.socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.icon{
+    transform: rotate(-22.5deg) scale(1.4) translate(-2.5px ,2.5px);
+    color: white;
+}
+.instagram{
+    transform: rotate(-45deg) scale(2.1) translate(-4px,2.5px);
+    color: white;
+
+}
+.rotated-rect:hover {
+    background-color: white;
+    color: #00d8b4;
+    transition: all 0.25s linear;
+}
+.rotated-rect:hover .icon{
+    color: #00d8b4;
+}
+.rotated-rect:hover .instagram{
+    color: #00d8b4;
+}
+
+
+
+
